@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Grams</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Content</th>
+      <th>Location</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @grams.each do |gram| %>
+      <tr>
+        <td><%= gram.title %></td>
+        <td><%= gram.content %></td>
+        <td><%= gram.location %></td>
+        <td><%= country_name(gram.country_code) %></td>
+        <td><%= link_to 'Show', gram %></td>
+        <td><%= link_to 'Edit', edit_gram_path(gram) %></td>
+        <td><%= link_to 'Destroy', gram, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Gram', new_gram_path %>
