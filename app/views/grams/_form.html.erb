@@ -1,4 +1,7 @@
 <%= form_with(model: gram, local: true) do |form| %>
+  <div>
+    <%= form.hidden_field :image_url, role: 'uploadcare-uploader', data: {crop: '600:600', 'images-only' => true} %>
+  </div>
   <%= form.label :title %>
   <%= form.text_field :title %>
   <%= form.label :content %>
