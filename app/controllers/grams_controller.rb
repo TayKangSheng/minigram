@@ -74,6 +74,6 @@ class GramsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def gram_params
       # params.fetch(:gram, {})
-      params.require(:gram).permit(:title, :content, :location, :country_code)
+      params.require(:gram).permit(:title, :content, :location, :country_code, :image_url)
     end
 end
