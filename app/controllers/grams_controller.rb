@@ -4,7 +4,7 @@ class GramsController < ApplicationController
   # GET /grams
   # GET /grams.json
   def index
-    @grams = Gram.all
+    @grams = Gram.page(params[:page]).per(2)
   end
 
   # GET /grams/1
